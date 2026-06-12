@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+html, body, #root { height: 100%; margin: 0; }
+body { background: #070b16; }
+
+/* glowing flow along lit edges */
+.edge-flow { animation: flow 1.1s linear infinite; }
+@keyframes flow { to { stroke-dashoffset: -32; } }
+
+.pulse-soft { animation: pulseSoft 2.4s ease-in-out infinite; }
+@keyframes pulseSoft { 0%,100% { opacity: 0.9; } 50% { opacity: 0.45; } }
+
+.ring-pulse { animation: ringPulse 2s ease-in-out infinite; }
+@keyframes ringPulse { 0%,100% { r: 30; stroke-opacity: 0.6; } 50% { r: 40; stroke-opacity: 0.2; } }
+
+.fade-up { animation: fadeUp 0.25s ease-out; }
+@keyframes fadeUp { from { opacity: 0; transform: translate(-50%, 10px); } to { opacity: 1; transform: translate(-50%, 0); } }
+
+.shake { animation: shake 0.32s ease; }
+@keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-5px)} 75%{transform:translateX(5px)} }
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: #1d2b54; border-radius: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+input::placeholder { color: #566091; }
